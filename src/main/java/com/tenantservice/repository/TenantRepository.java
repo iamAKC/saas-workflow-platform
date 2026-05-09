@@ -1,8 +1,8 @@
-package tenantservice.repository;
+package com.tenantservice.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import tenantservice.entity.Tenant;
+import com.tenantservice.entity.Tenant;
 
 public interface TenantRepository extends JpaRepository<Tenant, Long> {
 

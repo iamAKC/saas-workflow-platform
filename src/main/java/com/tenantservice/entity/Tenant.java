@@ -1,4 +1,4 @@
-package tenantservice.entity;
+package com.tenantservice.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,4 +55,5 @@ public class Tenant {
     public void setUsers(List<User> users) {
         this.users = users;
     }
+
 }

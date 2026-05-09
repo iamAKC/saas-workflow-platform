@@ -1,9 +1,9 @@
-package tenantservice.controller;
+package com.tenantservice.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import tenantservice.entity.User;
-import tenantservice.service.UserService;
+import com.tenantservice.entity.User;
+import com.tenantservice.service.UserService;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,7 +27,4 @@ public class UserController {
         return service.createUser(tenantId, user);
     }
     
-
-    
-
 }

@@ -1,4 +1,4 @@
-package tenantservice.entity;
+package com.tenantservice.entity;
 
 import jakarta.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -64,4 +64,5 @@ public class User {
     public void setTenant(Tenant tenant) {
         this.tenant = tenant;
     }
+
 }

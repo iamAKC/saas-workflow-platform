@@ -1,8 +1,8 @@
-package tenantservice.repository;
+package com.tenantservice.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import tenantservice.entity.User;
+import com.tenantservice.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Long>{
 

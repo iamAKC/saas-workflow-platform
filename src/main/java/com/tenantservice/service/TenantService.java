@@ -1,11 +1,11 @@
-package tenantservice.service;
+package com.tenantservice.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import tenantservice.entity.Tenant;
-import tenantservice.repository.TenantRepository;
+import com.tenantservice.entity.Tenant;
+import com.tenantservice.repository.TenantRepository;
 
 @Service
 public class TenantService {
