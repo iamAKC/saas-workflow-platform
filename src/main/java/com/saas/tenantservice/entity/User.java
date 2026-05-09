@@ -1,4 +1,4 @@
-package com.tenantservice.entity;
+package com.saas.tenantservice.entity;
 
 import jakarta.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonBackReference;

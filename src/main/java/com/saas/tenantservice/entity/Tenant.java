@@ -1,4 +1,4 @@
-package com.tenantservice.entity;
+package com.saas.tenantservice.entity;
 
 import java.util.ArrayList;
 import java.util.List;

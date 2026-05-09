@@ -1,10 +1,10 @@
-package com.tenantservice.controller;
+package com.saas.tenantservice.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tenantservice.entity.Tenant;
-import com.tenantservice.repository.TenantRepository;
-import com.tenantservice.service.TenantService;
+import com.saas.tenantservice.entity.Tenant;
+import com.saas.tenantservice.repository.TenantRepository;
+import com.saas.tenantservice.service.TenantService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

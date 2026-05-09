@@ -1,9 +1,9 @@
-package com.tenantservice.controller;
+package com.saas.tenantservice.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tenantservice.entity.User;
-import com.tenantservice.service.UserService;
+import com.saas.tenantservice.entity.User;
+import com.saas.tenantservice.service.UserService;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
