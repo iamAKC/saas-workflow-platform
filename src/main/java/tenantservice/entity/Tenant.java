@@ -1,8 +1,15 @@
 package tenantservice.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Tenant {
@@ -12,6 +19,10 @@ public class Tenant {
 
     private String name;
     private String email;
+
+    @OneToMany(mappedBy = "tenant", cascade = CascadeType.ALL)
+    @JsonManagedReference  // to serializes the list of users
+    private List<User> users = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -35,5 +46,13 @@ public class Tenant {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 }
