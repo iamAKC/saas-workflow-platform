@@ -2,6 +2,8 @@ package com.saas.tenantservice.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.saas.tenantservice.dto.TenantRequestDto;
+import com.saas.tenantservice.dto.TenantResponseDto;
 import com.saas.tenantservice.entity.Tenant;
 import com.saas.tenantservice.repository.TenantRepository;
 import com.saas.tenantservice.service.TenantService;
@@ -27,12 +29,12 @@ public class TenantController {
     }
 
     @PostMapping
-    public Tenant create(@RequestBody Tenant tenant) {
+    public TenantResponseDto create(@RequestBody TenantRequestDto tenant) {
         return service.create(tenant);
     }
 
     @GetMapping
-    public List<Tenant> getAll() {
+    public List<TenantResponseDto> getAll() {
         return service.getAll();
     }
 
