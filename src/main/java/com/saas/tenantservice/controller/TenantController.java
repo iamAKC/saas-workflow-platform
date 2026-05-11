@@ -7,6 +7,9 @@ import com.saas.tenantservice.dto.TenantResponseDto;
 import com.saas.tenantservice.entity.Tenant;
 import com.saas.tenantservice.repository.TenantRepository;
 import com.saas.tenantservice.service.TenantService;
+
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,7 +32,7 @@ public class TenantController {
     }
 
     @PostMapping
-    public TenantResponseDto create(@RequestBody TenantRequestDto tenant) {
+    public TenantResponseDto create(@Valid @RequestBody TenantRequestDto tenant) {
         return service.create(tenant);
     }
 
