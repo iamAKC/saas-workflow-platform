@@ -2,6 +2,7 @@ package com.saas.tenantservice.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.saas.tenantservice.dto.ApiResponse;
 import com.saas.tenantservice.dto.UserRequestDto;
 import com.saas.tenantservice.dto.UserResponseDto;
 import com.saas.tenantservice.entity.User;
@@ -29,19 +30,26 @@ public class UserController {
         this.service = service;
     }
 
+    // @PostMapping("/tenants/{tenantId}/users")
+    // public UserResponseDto createUser(@PathVariable Long tenantId, @RequestBody UserRequestDto user) {
+    //     return service.createUser(tenantId, user);
+    // }
     @PostMapping("/tenants/{tenantId}/users")
-    public UserResponseDto createUser(@PathVariable Long tenantId, @RequestBody UserRequestDto user) {
-        return service.createUser(tenantId, user);
+    public ApiResponse<UserResponseDto> createUser(@PathVariable Long tenantId, @RequestBody UserRequestDto user) {
+        UserResponseDto result = service.createUser(tenantId, user);
+        return new ApiResponse<>("Success", result, "User created successfully");
     }
 
     @GetMapping("/tenants/{tenantId}/users")
-    public List<UserResponseDto> getUsersByTenant(@PathVariable Long tenantId) {
-        return service.getUsersByTenant(tenantId);
+    public ApiResponse<List<UserResponseDto>> getUsersByTenant(@PathVariable Long tenantId) {
+        List<UserResponseDto> list = service.getUsersByTenant(tenantId);
+        return new ApiResponse<>("Success", list, "User fetched successfully");
     }
 
     @GetMapping("/users")
-    public List<UserResponseDto> getAllUsers() {
-        return service.getAll();
+    public ApiResponse<List<UserResponseDto>> getAllUsers() {
+        List<UserResponseDto> list = service.getAll();
+        return new ApiResponse<>("Success", list, "User fetched successfully");
     }
     
 }
