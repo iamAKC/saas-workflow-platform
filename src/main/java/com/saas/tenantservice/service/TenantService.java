@@ -2,6 +2,10 @@ package com.saas.tenantservice.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.saas.tenantservice.dto.TenantRequestDto;
@@ -48,6 +52,22 @@ public class TenantService {
             res.email = tenant.getEmail();
             return res;
         }).toList();
+    }
+
+    public Page<TenantResponseDto> getAllPaginated(int page, int size, String sortBy, String direction) {
+        
+        Sort sort = direction.equalsIgnoreCase("desc")
+                ? Sort.by(sortBy).descending()
+                : Sort.by(sortBy).ascending();
+        Pageable pageable = PageRequest.of(page, size, sort);
+        Page<Tenant> tenantPage = repo.findAll(pageable);
+        return tenantPage.map(tenant -> {
+            TenantResponseDto res = new TenantResponseDto();
+            res.id = tenant.getId();
+            res.name = tenant.getName();
+            res.email = tenant.getEmail();
+            return res;
+        });
     }
 
 }
